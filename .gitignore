@@ -8,3 +8,6 @@
 # ignore tensorflow model
 /models/tf_model/*
 !/models/tf_model/README.md
+
+/output/*
+!/output/README.md
