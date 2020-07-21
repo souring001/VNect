@@ -1,15 +1,18 @@
-
+#!/usr/bin/env python3
 # -*- coding: UTF-8 -*-
 
-
+import argparse
 import cv2
-import numpy as np
 from src import utils
 from src.hog_box import HOGBox
 from src.estimator import VNectEstimator
 
-in_dir = 'pic/'
-file_name = 'test_pic.jpg'
+parser = argparse.ArgumentParser()
+parser.add_argument('--image', type=str, default='pic/test_pic.jpg')
+args = parser.parse_args()
+
+in_dir = args.image.split('/')[0] + '/'
+file_name = args.image.split('/')[-1]
 out_dir = 'output/'
 out_name = file_name.split('.')[0] + '_vnect.' + file_name.split('.')[1]
 
@@ -25,7 +28,7 @@ img = cv2.imread(in_dir + file_name)
 #hog = HOGBox()
 #hog.clicked = True
 #choose, rect = hog(img.copy())
-x, y, w, h = (0, 0, 368, 538)
+x, y, w, h = (0, 0, img.shape[1], img.shape[0])
 #print(rect)
 #img_cropped = img[y: y + h, x: x + w, :]
 img_cropped = img

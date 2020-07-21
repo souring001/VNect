@@ -11,3 +11,5 @@
 
 /output/*
 !/output/README.md
+
+/3rdperson_eq_personcrop/*
