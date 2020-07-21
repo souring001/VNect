@@ -25,27 +25,18 @@ joint_parents = [1, 15, 1, 2, 3, 1, 5, 6, 14, 8,
                  13]
 estimator = VNectEstimator()
 img = cv2.imread(in_dir + file_name)
-#hog = HOGBox()
-#hog.clicked = True
-#choose, rect = hog(img.copy())
 x, y, w, h = (0, 0, img.shape[1], img.shape[0])
-#print(rect)
-#img_cropped = img[y: y + h, x: x + w, :]
+
 img_cropped = img
 joints_2d, joints_3d = estimator(img_cropped)
+
 print('2D')
 print(joints_2d)
 print('3D')
 print(joints_3d)
-# 3d plotting
-#utils.draw_limbs_3d(joints_3d, joint_parents)
+
 # 2d plotting
 joints_2d[:, 0] += y
 joints_2d[:, 1] += x
 img_draw = utils.draw_limbs_2d(img.copy(), joints_2d, joint_parents, [x, y, w, h])
-#cv2.imshow('2D Prediction', img_draw)
 cv2.imwrite(out_dir + out_name, img_draw)
-
-
-#cv2.waitKey()
-#cv2.destroyAllWindows()
