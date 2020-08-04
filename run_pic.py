@@ -13,7 +13,7 @@ args = parser.parse_args()
 
 in_dir = args.image.split('/')[0] + '/'
 file_name = args.image.split('/')[-1]
-out_dir = 'output/'
+out_dir = 'output2/'
 out_name = file_name.split('.')[0] + '_vnect.' + file_name.split('.')[1]
 
 box_size = 368
@@ -30,10 +30,10 @@ x, y, w, h = (0, 0, img.shape[1], img.shape[0])
 img_cropped = img
 joints_2d, joints_3d = estimator(img_cropped)
 
-print('2D')
-print(joints_2d)
-print('3D')
-print(joints_3d)
+# print('2D')
+# print(joints_2d)
+# print('3D')
+# print(joints_3d)
 
 # 2d plotting
 joints_2d[:, 0] += y

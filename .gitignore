@@ -11,5 +11,7 @@
 
 /output/*
 !/output/README.md
+/output2/*
 
 /3rdperson_eq_personcrop/*
+/run_around_mask/*
