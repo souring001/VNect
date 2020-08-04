@@ -35,6 +35,8 @@ joints_2d, joints_3d = estimator(img_cropped)
 # print('3D')
 # print(joints_3d)
 
+print(joints_3d.shape)
+
 # 2d plotting
 joints_2d[:, 0] += y
 joints_2d[:, 1] += x

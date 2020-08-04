@@ -51,7 +51,7 @@ for file_name in sorted(file_names):
     pelvis_text += str(px) + ',' + str(py) + ',' + str(shoulder_width) + '\n'
     
     for i in range(joints_num):
-        vnect_text += str(i) + ' ' + str(joints_3d[i][0]) + ' ' + str(joints_3d[i][1]) + ' ' + str(joints_3d[i][2])+','
+        vnect_text += str(i) + ' ' + str(joints_3d[i][0]) + ' ' + str(joints_3d[i][1]) + ' ' + str(joints_3d[i][2])+', '
 
     vnect_text += '\n'
 
